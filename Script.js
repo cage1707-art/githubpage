@@ -2,34 +2,34 @@ const initialProducts = [
     // Hamburguesas
     {
         id: 1, name: "Hamburguesa Clásica", category: "Hamburguesas", price: 4.50,
-        image: "https://picsum.photos/seed/burger-classic/400/280",
+        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop",
         legend: "Pan brioche tostado, carne 100% res, lechuga fresca y tomate. El clásico que nunca falla."
     },
     {
         id: 2, name: "Hamburguesa con Queso", category: "Hamburguesas", price: 5.00,
-        image: "https://picsum.photos/seed/burger-cheese/400/280",
+        image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop",
         legend: "Doble cheddar derretido sobre carne jugosa. Para los amantes del queso."
     },
     {
         id: 3, name: "Hamburguesa Doble", category: "Hamburguesas", price: 6.50,
-        image: "https://picsum.photos/seed/burger-double/400/280",
+        image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&auto=format&fit=crop",
         legend: "Dos carnes a la parrilla, doble queso y salsa especial de la casa. ¡La más generosa!"
     },
     {
         id: 4, name: "Hamburguesa BBQ", category: "Hamburguesas", price: 5.50,
-        image: "https://picsum.photos/seed/burger-bbq/400/280",
+        image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&auto=format&fit=crop",
         legend: "Glaseada con salsa BBQ ahumada, aros de cebolla crujientes y pepinillos. Sabor intenso."
     },
     {
         id: 5, name: "Hamburguesa de Pollo", category: "Hamburguesas", price: 5.00,
-        image: "https://picsum.photos/seed/burger-chicken/400/280",
+        image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&auto=format&fit=crop",
         legend: "Pechuga de pollo empanizada crujiente, mayonesa de hierbas y ensalada fresca."
     },
 
     // Bebidas
     {
         id: 6, name: "Soda Cola", category: "Bebidas", price: 1.50,
-        image: "https://picsum.photos/seed/soda-cola/400/280",
+        image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=400&auto=format&fit=crop",
         legend: "Cola clásica bien fría, vaso grande con hielo. Tamaño 16 oz."
     },
     {
@@ -66,7 +66,7 @@ const initialProducts = [
     // Snacks
     {
         id: 13, name: "Palomitas Pequeñas", category: "Snacks", price: 2.50,
-        image: "https://picsum.photos/seed/popcorn-big/400/280",
+        image: "https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=400&auto=format&fit=crop",
         legend: "Palomitas recién hechas con mantequilla real. Tamaño personal, ideal para uno."
     },
     {
@@ -101,24 +101,24 @@ const initialProducts = [
     },
     {
         id: 20, name: "Nachos con Queso", category: "Snacks", price: 3.50,
-        image: "https://picsum.photos/seed/nachos-bowl/400/280",
+        image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&auto=format&fit=crop",
         legend: "Totopos dorados con salsa de queso cheddar caliente. Para compartir o disfrutar solo."
     },
 
     // Extras
     {
         id: 21, name: "Papas Fritas Peq.", category: "Extras", price: 2.00,
-        image: "https://picsum.photos/seed/fries-small/400/280",
+        image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&auto=format&fit=crop",
         legend: "Papas cortadas en juliana, fritas al momento. Porción pequeña, perfecta como acompañante."
     },
     {
         id: 22, name: "Papas Fritas Gran.", category: "Extras", price: 3.00,
-        image: "https://picsum.photos/seed/fries-large/400/280",
+        image: "https://images.unsplash.com/photo-1576107232684-1279f390859f?w=400&auto=format&fit=crop",
         legend: "Porción grande de papas fritas crujientes. Con sal gruesa y ketchup incluido."
     },
     {
         id: 23, name: "Aros de Cebolla", category: "Extras", price: 3.50,
-        image: "https://picsum.photos/seed/onion-rings/400/280",
+        image: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&auto=format&fit=crop",
         legend: "Aros de cebolla rebozados con panko y fritos en aceite limpio. Crujientes por fuera, suaves por dentro."
     },
     {
@@ -128,14 +128,14 @@ const initialProducts = [
     },
     {
         id: 25, name: "Galleta Chocolate", category: "Extras", price: 1.50,
-        image: "https://picsum.photos/seed/cookie-choco/400/280",
+        image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&auto=format&fit=crop",
         legend: "Cookie horneada con trocitos de chocolate semi-amargo. Tierna por dentro, dorada por fuera."
     },
 
     // Canasta Básica
     {
         id: 26, name: "Arroz", category: "Canasta Básica", price: 2.50,
-        image: "https://picsum.photos/seed/rice-bag/400/280",
+        image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop",
         legend: "Arroz blanco de grano largo. Bolsa 1 kg. Producto nacional de primera calidad."
     },
     {
@@ -177,7 +177,7 @@ const initialProducts = [
     },
     {
         id: 34, name: "Papel Higiénico", category: "Higiene", price: 4.50,
-        image: "https://picsum.photos/seed/toilet-paper/400/280",
+        image: "https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400&auto=format&fit=crop",
         legend: "Papel higiénico doble hoja, suave y resistente. Paquete x4 rollos de 200 hojas c/u."
     }
 ];
