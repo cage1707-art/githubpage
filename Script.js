@@ -1,36 +1,35 @@
-// Base de datos de productos con imágenes reales corregidas y leyendas
 const initialProducts = [
     // Hamburguesas
     {
         id: 1, name: "Hamburguesa Clásica", category: "Hamburguesas", price: 4.50,
-        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/burger-classic/400/280",
         legend: "Pan brioche tostado, carne 100% res, lechuga fresca y tomate. El clásico que nunca falla."
     },
     {
         id: 2, name: "Hamburguesa con Queso", category: "Hamburguesas", price: 5.00,
-        image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/burger-cheese/400/280",
         legend: "Doble cheddar derretido sobre carne jugosa. Para los amantes del queso."
     },
     {
         id: 3, name: "Hamburguesa Doble", category: "Hamburguesas", price: 6.50,
-        image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/burger-double/400/280",
         legend: "Dos carnes a la parrilla, doble queso y salsa especial de la casa. ¡La más generosa!"
     },
     {
         id: 4, name: "Hamburguesa BBQ", category: "Hamburguesas", price: 5.50,
-        image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/burger-bbq/400/280",
         legend: "Glaseada con salsa BBQ ahumada, aros de cebolla crujientes y pepinillos. Sabor intenso."
     },
     {
         id: 5, name: "Hamburguesa de Pollo", category: "Hamburguesas", price: 5.00,
-        image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/burger-chicken/400/280",
         legend: "Pechuga de pollo empanizada crujiente, mayonesa de hierbas y ensalada fresca."
     },
 
     // Bebidas
     {
         id: 6, name: "Soda Cola", category: "Bebidas", price: 1.50,
-        image: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/soda-cola/400/280",
         legend: "Cola clásica bien fría, vaso grande con hielo. Tamaño 16 oz."
     },
     {
@@ -67,7 +66,7 @@ const initialProducts = [
     // Snacks
     {
         id: 13, name: "Palomitas Pequeñas", category: "Snacks", price: 2.50,
-        image: "https://images.unsplash.com/photo-1578849278619-e73505e9610f?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/popcorn-big/400/280",
         legend: "Palomitas recién hechas con mantequilla real. Tamaño personal, ideal para uno."
     },
     {
@@ -102,24 +101,24 @@ const initialProducts = [
     },
     {
         id: 20, name: "Nachos con Queso", category: "Snacks", price: 3.50,
-        image: "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/nachos-bowl/400/280",
         legend: "Totopos dorados con salsa de queso cheddar caliente. Para compartir o disfrutar solo."
     },
 
     // Extras
     {
         id: 21, name: "Papas Fritas Peq.", category: "Extras", price: 2.00,
-        image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/fries-small/400/280",
         legend: "Papas cortadas en juliana, fritas al momento. Porción pequeña, perfecta como acompañante."
     },
     {
         id: 22, name: "Papas Fritas Gran.", category: "Extras", price: 3.00,
-        image: "https://images.unsplash.com/photo-1576107232684-1279f390859f?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/fries-large/400/280",
         legend: "Porción grande de papas fritas crujientes. Con sal gruesa y ketchup incluido."
     },
     {
         id: 23, name: "Aros de Cebolla", category: "Extras", price: 3.50,
-        image: "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/onion-rings/400/280",
         legend: "Aros de cebolla rebozados con panko y fritos en aceite limpio. Crujientes por fuera, suaves por dentro."
     },
     {
@@ -129,14 +128,14 @@ const initialProducts = [
     },
     {
         id: 25, name: "Galleta Chocolate", category: "Extras", price: 1.50,
-        image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/cookie-choco/400/280",
         legend: "Cookie horneada con trocitos de chocolate semi-amargo. Tierna por dentro, dorada por fuera."
     },
 
     // Canasta Básica
     {
         id: 26, name: "Arroz", category: "Canasta Básica", price: 2.50,
-        image: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/rice-bag/400/280",
         legend: "Arroz blanco de grano largo. Bolsa 1 kg. Producto nacional de primera calidad."
     },
     {
@@ -178,12 +177,11 @@ const initialProducts = [
     },
     {
         id: 34, name: "Papel Higiénico", category: "Higiene", price: 4.50,
-        image: "https://images.unsplash.com/photo-1584556812952-905ffd0c611a?w=400&auto=format&fit=crop",
+        image: "https://picsum.photos/seed/toilet-paper/400/280",
         legend: "Papel higiénico doble hoja, suave y resistente. Paquete x4 rollos de 200 hojas c/u."
     }
 ];
 
-// Ubicaciones de los kioscos Fast Market en Panamá
 const kioskLocations = [
     { name: "Fast Market — Albrook Mall", lat: 8.9937, lng: -79.5562, address: "Albrook Mall, planta baja, frente a comida rápida" },
     { name: "Fast Market — Multiplaza Pacific", lat: 8.9894, lng: -79.5127, address: "Multiplaza Pacific, Nivel 1, zona de snacks" },
@@ -204,9 +202,11 @@ function initApp() {
 
 function loadProducts() {
     const savedRatings = JSON.parse(localStorage.getItem('fastMarketRatings')) || {};
+    const savedReviews = JSON.parse(localStorage.getItem('fastMarketReviews')) || {};
     products = initialProducts.map(prod => {
         const ratingData = savedRatings[prod.id] || { score: 0, count: 0 };
-        return { ...prod, rating: ratingData };
+        const reviews = savedReviews[prod.id] || [];
+        return { ...prod, rating: ratingData, reviews };
     });
 }
 
@@ -222,21 +222,39 @@ function renderProducts(categoryFilter) {
         const avg = product.rating.count === 0 ? 0 : Math.round(product.rating.score / product.rating.count);
         const starsHtml = '★'.repeat(avg) + '☆'.repeat(5 - avg);
 
+        // Mostrar hasta 2 reseñas recientes
+        const recentReviews = (product.reviews || []).slice(-2).reverse();
+        const reviewsHtml = recentReviews.length > 0
+            ? `<div class="product-reviews">
+                ${recentReviews.map(r => `
+                    <div class="review-bubble">
+                        <span class="review-stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</span>
+                        <span class="review-text">"${r.text}"</span>
+                    </div>`).join('')}
+               </div>`
+            : '';
+
         const card = document.createElement("div");
         card.className = "product-card";
         card.innerHTML = `
             <div class="product-img-wrapper">
                 <img src="${product.image}" alt="${product.name}"
-                     onerror="this.src='https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=400&auto=format&fit=crop'">
+                     onerror="this.onerror=null;this.src='https://placehold.co/400x300/e8edf5/002B5B?text=Sin+imagen'">
             </div>
             <div class="product-body">
                 <div class="product-title">${product.name}</div>
                 <div class="product-legend">${product.legend}</div>
                 <div class="product-stars">${starsHtml} <span class="rating-count">(${product.rating.count})</span></div>
+                ${reviewsHtml}
                 <div class="product-price">$${product.price.toFixed(2)}</div>
-                <button class="btn-add" onclick="addToCart(${product.id})">+ Agregar</button>
+                <button class="btn-add" data-id="${product.id}">+ Agregar</button>
             </div>
         `;
+
+        card.querySelector('.btn-add').addEventListener('click', function() {
+            addToCart(product.id, this);
+        });
+
         grid.appendChild(card);
     });
 }
@@ -252,19 +270,19 @@ function setupCategoryFilters() {
     });
 }
 
-function addToCart(productId) {
+function addToCart(productId, btn) {
     const product = products.find(p => p.id === productId);
     cart.push(product);
     updateCartUI();
 
-    // Pequeña animación de feedback
-    const btn = event.target;
-    btn.textContent = "✓ Agregado";
-    btn.style.background = "#28a745";
-    setTimeout(() => {
-        btn.textContent = "+ Agregar";
-        btn.style.background = "";
-    }, 800);
+    if (btn) {
+        btn.textContent = "✓ Agregado";
+        btn.style.background = "#28a745";
+        setTimeout(() => {
+            btn.textContent = "+ Agregar";
+            btn.style.background = "";
+        }, 800);
+    }
 }
 
 function removeFromCart(index) {
@@ -330,13 +348,12 @@ function switchScreen(screenId) {
     document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
     document.getElementById(screenId).classList.add("active");
 
-    // Inicializar mapa cuando se muestre esa pantalla
     if (screenId === 'map-screen') {
         setTimeout(initMap, 100);
     }
 }
 
-// ─── MAPA DE UBICACIONES ───────────────────────────────────────────────────────
+// ─── MAPA ──────────────────────────────────────────────────────────────────────
 let mapInitialized = false;
 
 function initMap() {
@@ -350,34 +367,27 @@ function initMap() {
         maxZoom: 18
     }).addTo(map);
 
-    // Ícono personalizado naranja
     const kioskIcon = L.divIcon({
         html: `<div style="
-            background: #F26A21;
-            color: white;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
+            background: #F26A21; color: white;
+            border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
             width: 36px; height: 36px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 3px 10px rgba(242,106,33,0.5);
-            border: 2px solid white;
+            box-shadow: 0 3px 10px rgba(242,106,33,0.5); border: 2px solid white;
         "><span style="transform:rotate(45deg); font-size:16px;">🛒</span></div>`,
-        className: '',
-        iconSize: [36, 36],
-        iconAnchor: [18, 36],
-        popupAnchor: [0, -38]
+        className: '', iconSize: [36, 36], iconAnchor: [18, 36], popupAnchor: [0, -38]
     });
 
     kioskLocations.forEach(loc => {
         L.marker([loc.lat, loc.lng], { icon: kioskIcon })
             .addTo(map)
             .bindPopup(`
-                <div style="font-family: 'Segoe UI', sans-serif; min-width:200px">
-                    <strong style="color:#002B5B; font-size:14px">${loc.name}</strong><br>
-                    <span style="color:#777; font-size:12px">${loc.address}</span><br>
+                <div style="font-family:'Segoe UI',sans-serif;min-width:200px">
+                    <strong style="color:#002B5B;font-size:14px">${loc.name}</strong><br>
+                    <span style="color:#777;font-size:12px">${loc.address}</span><br>
                     <button onclick="switchScreen('store-screen')"
-                        style="margin-top:8px; background:#F26A21; color:white; border:none;
-                               border-radius:6px; padding:6px 12px; cursor:pointer; font-size:12px">
+                        style="margin-top:8px;background:#F26A21;color:white;border:none;
+                               border-radius:6px;padding:6px 12px;cursor:pointer;font-size:12px">
                         Comprar aquí
                     </button>
                 </div>
@@ -389,11 +399,8 @@ function initMap() {
 function showPaymentForm(method) {
     document.getElementById("card-form").classList.add("hidden");
     document.getElementById("yappy-form").classList.add("hidden");
-    if (method === 'card') {
-        document.getElementById("card-form").classList.remove("hidden");
-    } else if (method === 'yappy') {
-        document.getElementById("yappy-form").classList.remove("hidden");
-    }
+    if (method === 'card') document.getElementById("card-form").classList.remove("hidden");
+    else if (method === 'yappy') document.getElementById("yappy-form").classList.remove("hidden");
 }
 
 function hidePaymentForms() {
@@ -409,7 +416,7 @@ function processPayment() {
     hidePaymentForms();
 }
 
-// ─── VALORACIONES ──────────────────────────────────────────────────────────────
+// ─── VALORACIONES CON RESEÑA (3-5 estrellas) ──────────────────────────────────
 function prepareRatingScreen() {
     const ratingList = document.getElementById("rating-list");
     ratingList.innerHTML = "";
@@ -418,44 +425,66 @@ function prepareRatingScreen() {
     const uniqueItems = [...new Map(cart.map(item => [item.id, item])).values()];
 
     uniqueItems.forEach(item => {
-        userRatings[item.id] = 5;
+        userRatings[item.id] = { stars: 5, text: "" };
 
         const div = document.createElement("div");
         div.className = "rating-item";
         div.innerHTML = `
-            <span>${item.name}</span>
-            <div class="stars-selector" data-id="${item.id}">
-                <span data-val="1" class="active">★</span>
-                <span data-val="2" class="active">★</span>
-                <span data-val="3" class="active">★</span>
-                <span data-val="4" class="active">★</span>
-                <span data-val="5" class="active">★</span>
+            <div class="rating-item-top">
+                <span class="rating-item-name">${item.name}</span>
+                <div class="stars-selector" data-id="${item.id}">
+                    <span data-val="3" class="active">★</span>
+                    <span data-val="4" class="active">★</span>
+                    <span data-val="5" class="active">★</span>
+                </div>
             </div>
+            <textarea class="review-input" data-id="${item.id}"
+                placeholder="Escribe tu reseña (opcional)..." maxlength="120"></textarea>
         `;
         ratingList.appendChild(div);
     });
 
+    // Lógica de estrellas (3, 4, 5)
     document.querySelectorAll(".stars-selector span").forEach(star => {
         star.addEventListener("click", (e) => {
             const container = e.target.closest('.stars-selector');
             const productId = container.dataset.id;
             const value = parseInt(e.target.dataset.val);
-            userRatings[productId] = value;
+            userRatings[productId].stars = value;
             container.querySelectorAll("span").forEach(s => {
                 s.classList.toggle("active", parseInt(s.dataset.val) <= value);
             });
+        });
+    });
+
+    // Lógica de texto
+    document.querySelectorAll(".review-input").forEach(textarea => {
+        textarea.addEventListener("input", (e) => {
+            const productId = e.target.dataset.id;
+            userRatings[productId].text = e.target.value.trim();
         });
     });
 }
 
 function finishOrder() {
     const savedRatings = JSON.parse(localStorage.getItem('fastMarketRatings')) || {};
-    for (const [id, newScore] of Object.entries(userRatings)) {
+    const savedReviews = JSON.parse(localStorage.getItem('fastMarketReviews')) || {};
+
+    for (const [id, data] of Object.entries(userRatings)) {
         if (!savedRatings[id]) savedRatings[id] = { score: 0, count: 0 };
-        savedRatings[id].score += newScore;
+        savedRatings[id].score += data.stars;
         savedRatings[id].count += 1;
+
+        if (data.text) {
+            if (!savedReviews[id]) savedReviews[id] = [];
+            savedReviews[id].push({ stars: data.stars, text: data.text });
+            if (savedReviews[id].length > 10) savedReviews[id].shift();
+        }
     }
+
     localStorage.setItem('fastMarketRatings', JSON.stringify(savedRatings));
+    localStorage.setItem('fastMarketReviews', JSON.stringify(savedReviews));
+
     cart = [];
     updateCartUI();
     loadProducts();
