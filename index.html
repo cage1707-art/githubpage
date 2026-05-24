@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Market — Kiosco Digital</title>
+
+    <!-- Leaflet CSS para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo-container">
+            <div class="logo-left">
+                <div class="logo-icon">
+                    <span>📱</span><span>🛒</span>
+                </div>
+                <div class="logo-text">
+                    <h1>FAST <span>MARKET</span></h1>
+                    <h2>KIOSKO DIGITAL AUTOSERVICIO</h2>
+                    <p>Compra Fácil, Compra Rápido</p>
+                </div>
+            </div>
+
+            <!-- Navegación del header -->
+            <nav class="header-nav">
+                <button class="btn-nav active-nav" onclick="switchScreen('store-screen'); setNavActive(this)">🏪 Tienda</button>
+                <button class="btn-nav" onclick="switchScreen('map-screen'); setNavActive(this)">📍 Ubicaciones</button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="app-container">
+
+        <!-- ══════════════════════════════════════════════════
+             PANTALLA 1: TIENDA
+        ══════════════════════════════════════════════════ -->
+        <section id="store-screen" class="screen active">
+            <div class="store-layout">
+
+                <div class="main-content">
+                    <!-- Filtros de categorías -->
+                    <nav id="categories" class="category-nav">
+                        <button class="cat-btn active" data-category="Todos">🍽️ Todos</button>
+                        <button class="cat-btn" data-category="Hamburguesas">🍔 Hamburguesas</button>
+                        <button class="cat-btn" data-category="Bebidas">🥤 Bebidas</button>
+                        <button class="cat-btn" data-category="Snacks">🍿 Snacks</button>
+                        <button class="cat-btn" data-category="Extras">🍟 Extras</button>
+                        <button class="cat-btn" data-category="Canasta Básica">🧺 Canasta Básica</button>
+                        <button class="cat-btn" data-category="Higiene">🧼 Higiene</button>
+                    </nav>
+
+                    <!-- Grid de productos -->
+                    <div id="product-grid" class="product-grid"></div>
+                </div>
+
+                <!-- Sidebar del carrito -->
+                <aside class="cart-sidebar">
+                    <h3>Mi Pedido 🛒 <span id="cart-count">0</span></h3>
+                    <div id="cart-items" class="cart-items"></div>
+                    <div class="cart-summary">
+                        <div class="total-row">
+                            <span>Total:</span>
+                            <span id="cart-total">$0.00</span>
+                        </div>
+                        <button id="btn-checkout" class="btn-primary" disabled>
+                            Proceder al Pago →
+                        </button>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════
+             PANTALLA 2: MAPA DE UBICACIONES
+        ══════════════════════════════════════════════════ -->
+        <section id="map-screen" class="screen">
+            <div class="map-screen-layout">
+
+                <div class="map-header">
+                    <h2>📍 Nuestros Kioscos en Panamá</h2>
+                    <p>Encuentra el Fast Market más cercano a ti. Haz clic en un marcador para ver detalles.</p>
+                </div>
+
+                <div class="map-content">
+                    <!-- Mapa interactivo -->
+                    <div id="kiosk-map"></div>
+
+                    <!-- Lista de ubicaciones -->
+                    <div class="map-list">
+                        <div class="kiosk-list-item">
+                            <h4>🛒 Albrook Mall</h4>
+                            <p>Planta baja, frente a zona de comida rápida</p>
+                        </div>
+                        <div class="kiosk-list-item">
+                            <h4>🛒 Multiplaza Pacific</h4>
+                            <p>Nivel 1, zona de snacks y conveniencia</p>
+                        </div>
+                        <div class="kiosk-list-item">
+                            <h4>🛒 Multicentro</h4>
+                            <p>Planta baja, cerca de la entrada principal</p>
+                        </div>
+                        <div class="kiosk-list-item">
+                            <h4>🛒 Plaza Ágora</h4>
+                            <p>Nivel 1, ala norte del centro comercial</p>
+                        </div>
+                        <div class="kiosk-list-item">
+                            <h4>🛒 Metro Mall</h4>
+                            <p>Nivel 2, área cercana al cine</p>
+                        </div>
+                        <div class="map-back-btn">
+                            <button class="btn-primary" style="max-width:220px; margin:0 auto"
+                                onclick="switchScreen('store-screen'); setNavActive(document.querySelector('.btn-nav'))">
+                                ← Ir a la Tienda
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════
+             PANTALLA 3: RESUMEN DEL CARRITO
+        ══════════════════════════════════════════════════ -->
+        <section id="cart-screen" class="screen">
+            <div class="center-box">
+                <h2>🛒 Revisa tu pedido</h2>
+                <div id="checkout-list" class="checkout-list"></div>
+                <h3 style="color: var(--primary-blue); margin-top:10px">
+                    Total a pagar: <span id="checkout-total-price" style="color:var(--primary-orange)">$0.00</span>
+                </h3>
+                <div class="action-buttons">
+                    <button class="btn-secondary" onclick="switchScreen('store-screen')">← Volver</button>
+                    <button class="btn-primary" onclick="switchScreen('payment-screen')">Elegir Método de Pago →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════
+             PANTALLA 4: PAGO
+        ══════════════════════════════════════════════════ -->
+        <section id="payment-screen" class="screen">
+            <div class="center-box">
+                <h2>💳 Método de Pago</h2>
+                <p style="color:var(--text-light); margin-top:6px">Selecciona cómo deseas pagar tu pedido</p>
+
+                <div class="payment-options">
+                    <button class="btn-pay-method" onclick="showPaymentForm('card')">
+                        💳 Tarjeta de Crédito / Débito
+                    </button>
+                    <button class="btn-pay-method yappy-btn" onclick="showPaymentForm('yappy')">
+                        📱 Pagar con Yappy
+                    </button>
+                </div>
+
+                <!-- Formulario tarjeta -->
+                <div id="card-form" class="payment-form hidden">
+                    <h3 style="color:var(--primary-blue); margin-bottom:16px">Datos de la Tarjeta</h3>
+                    <input type="text" placeholder="Nombre en la tarjeta" class="kiosk-input">
+                    <input type="text" placeholder="Número de tarjeta (16 dígitos)" class="kiosk-input" maxlength="16">
+                    <div class="row-inputs">
+                        <input type="text" placeholder="MM/AA" class="kiosk-input" maxlength="5">
+                        <input type="password" placeholder="CVV" class="kiosk-input" maxlength="3">
+                    </div>
+                    <button class="btn-primary" onclick="processPayment()">✓ Pagar Ahora</button>
+                    <button class="btn-secondary" onclick="hidePaymentForms()">Cancelar</button>
+                </div>
+
+                <!-- Formulario Yappy -->
+                <div id="yappy-form" class="payment-form hidden">
+                    <h3 style="color:#005A9C; margin-bottom:12px">Pago con Yappy — Banco General</h3>
+                    <div class="qr-placeholder">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=FastMarket-Yappy-Pago&color=005A9C&bgcolor=FFFFFF"
+                             alt="Código QR Yappy">
+                        <p style="color:var(--text-light); font-size:0.9rem">Escanea el QR con tu App de Banco General</p>
+                    </div>
+                    <button class="btn-primary" onclick="processPayment()">✓ Simular Pago Exitoso</button>
+                    <button class="btn-secondary" onclick="hidePaymentForms()">Cancelar</button>
+                </div>
+
+                <button class="btn-secondary mt-20" onclick="switchScreen('cart-screen')">← Volver al carrito</button>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════
+             PANTALLA 5: CONFIRMACIÓN Y CALIFICACIÓN
+        ══════════════════════════════════════════════════ -->
+        <section id="confirmation-screen" class="screen">
+            <div class="center-box">
+                <h1 class="success-title">¡Pedido Confirmado! 🎉</h1>
+                <p style="font-size:1.1rem; color:var(--text-light)">
+                    Tu número de orden es: <strong id="order-number" style="color:var(--primary-blue)"></strong>
+                </p>
+                <p style="margin-top:8px; color:var(--text-light)">
+                    Por favor retira tu recibo en la parte inferior del kiosco.
+                </p>
+
+                <div class="rating-section">
+                    <h3>¡Ayúdanos a mejorar! Califica tus productos:</h3>
+                    <div id="rating-list"></div>
+                    <button class="btn-primary" onclick="finishOrder()" style="max-width:340px; margin:20px auto 0">
+                        Finalizar y Volver al Inicio
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="Script.js"></script>
+
+    <script>
+        // Marcar botón de nav activo
+        function setNavActive(el) {
+            document.querySelectorAll('.btn-nav').forEach(b => b.classList.remove('active-nav'));
+            el.classList.add('active-nav');
+        }
+    </script>
+</body>
+</html>
